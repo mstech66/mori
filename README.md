@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A notes application built with **Next.js (App Router)** and styled entirely with **Tailwind CSS**, following modern React and Next.js best practices.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Next.js App Router (`src/app`)**: Server-first architecture with modular client components and providers.
+- **100% Tailwind CSS**: Fully converted legacy CSS to utility classes with dark mode and custom theme tokens.
+- **Redux Toolkit State Management**: Client-side state persistence for notes and themes with SSR hydration guards.
+- **Material UI & Icons**: Seamless integration of MUI components (FAB, Dialog, Transitions) alongside Tailwind styling.
+- **Responsive Multi-Column Masonry**: Responsive column layout (`columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-6`) with smooth hover interactions.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+├── public/
+│   └── assets/
+│       ├── fonts/         # Local fonts (SF Pro)
+│       └── images/        # Pattern backgrounds (light / dark)
+├── src/
+│   ├── app/
+│   │   ├── globals.css    # Tailwind directives and base layer styles
+│   │   ├── layout.tsx     # Root layout with font configuration & providers
+│   │   └── page.tsx       # Main page
+│   ├── components/
+│   │   ├── modal/         # Dialog and note modal components
+│   │   ├── nav/           # Navigation bar with dark mode toggle
+│   │   ├── note/          # Note card component with Tailwind styling
+│   │   └── noteslist/     # Responsive notes masonry grid and FAB
+│   ├── lib/
+│   │   └── utils.ts       # Tailwind class merging utility (`cn`)
+│   ├── providers/
+│   │   └── AppProviders.tsx # Client-side Redux & MUI Theme providers
+│   └── store/             # Redux slices and LocalStorage persistence
+├── postcss.config.js
+├── tailwind.config.ts
+└── tsconfig.json
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Development Server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run the development server:
 
-### `npm run build`
+```bash
+npm run dev
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Production Build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create an optimized production build:
 
-### `npm run eject`
+```bash
+npm run build
+npm run start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Linting
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run ESLint to check for code issues:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm run lint
+```

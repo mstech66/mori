@@ -1,6 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+export interface NoteItem {
+  id: string | number;
+  title: string | null;
+  content: string | null;
+}
+
+export interface NotesState {
+  notes: NoteItem[];
+}
+
+const initialState: NotesState = {
   notes: [{ id: "n1", title: "Hiee", content: "This is my first note!!" }],
 };
 
@@ -8,12 +18,12 @@ const noteSlice = createSlice({
   name: "notes",
   initialState,
   reducers: {
-    addNote(state, action) {
+    addNote(state, action: PayloadAction<NoteItem>) {
       const newNote = action.payload;
       console.log("Received:" + newNote);
       state.notes.push(newNote);
     },
-    updateNote(state, action) {
+    updateNote(state, action: PayloadAction<NoteItem>) {
       const id = action.payload.id;
       const updatedNote = action.payload;
       state.notes = state.notes.map((note) => {
@@ -25,7 +35,7 @@ const noteSlice = createSlice({
       });
       console.log(`Final Notes Arr`, state.notes);
     },
-    deleteNote(state, action) {
+    deleteNote(state, action: PayloadAction<{ id: string | number }>) {
       const id = action.payload.id;
       state.notes = state.notes.filter((note) => note.id !== id);
     },
