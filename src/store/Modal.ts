@@ -4,6 +4,16 @@ export interface ModalData {
   id?: string | number;
   title?: string | null;
   content?: string | null;
+  color?: string;
+  type?: "text" | "photo";
+  photoHeight?: number | string;
+  imageUrl?: string | null;
+  images?: string[];
+  date?: string;
+  time?: string;
+  tag?: string;
+  createdAt?: number;
+  updatedAt?: number;
 }
 
 export interface ModalState {

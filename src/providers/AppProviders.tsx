@@ -6,6 +6,18 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import store from "@/store/Index";
 
 const muiTheme = createTheme({
+  typography: {
+    fontFamily: [
+      "'Google Sans'",
+      "'Google Sans Flex'",
+      "system-ui",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "'Segoe UI'",
+      "Roboto",
+      "sans-serif",
+    ].join(","),
+  },
   palette: {
     primary: {
       main: "#eddd58",

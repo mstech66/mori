@@ -1,4 +1,4 @@
-# Notes App
+# Mori
 
 A notes application built with **Next.js (App Router)** and styled entirely with **Tailwind CSS**, following modern React and Next.js best practices.
 
@@ -27,8 +27,6 @@ A notes application built with **Next.js (App Router)** and styled entirely with
 │   │   ├── nav/           # Navigation bar with dark mode toggle
 │   │   ├── note/          # Note card component with Tailwind styling
 │   │   └── noteslist/     # Responsive notes masonry grid and FAB
-│   ├── lib/
-│   │   └── utils.ts       # Tailwind class merging utility (`cn`)
 │   ├── providers/
 │   │   └── AppProviders.tsx # Client-side Redux & MUI Theme providers
 │   └── store/             # Redux slices and LocalStorage persistence
