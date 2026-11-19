@@ -1,14 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button, IconButton, Tooltip } from "@mui/material";
+import { IconButton } from "@mui/material";
 import {
   DarkModeOutlined,
   LightModeOutlined,
-  AutoAwesomeOutlined,
 } from "@mui/icons-material";
 import { themeActions } from "@/store/Theme";
-import { noteActions } from "@/store/Note";
 import { useAppDispatch, useAppSelector } from "@/store/Index";
 import { formatNavHeaderDate } from "@/lib/dateTime";
 
@@ -43,17 +41,6 @@ const Nav: React.FC = () => {
         </span>
       </h1>
       <div className="flex items-center gap-2 shrink-0">
-        <Tooltip title="Load all 12 sample notes from the reference design">
-          <Button
-            variant="text"
-            onClick={() => dispatch(noteActions.resetNotes())}
-            startIcon={<AutoAwesomeOutlined className="!text-[18px]" />}
-            className="!text-stone-600 dark:!text-stone-300 !text-xs !font-medium !capitalize !rounded-xl !px-3 !py-1.5 hover:!bg-stone-200/50 dark:hover:!bg-stone-800"
-          >
-            <span className="hidden sm:inline">Load Demo Notes</span>
-            <span className="sm:hidden">Demo</span>
-          </Button>
-        </Tooltip>
         <IconButton
           id="switchBtn"
           onClick={switchTheme}

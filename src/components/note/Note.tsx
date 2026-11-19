@@ -231,30 +231,9 @@ const Note = React.forwardRef<HTMLDivElement, NoteProps>(
                       isDark ? "text-white/50" : "text-stone-900/40"
                     }`}
                   >
-                    <div className="relative w-14 h-14 flex items-center justify-center mb-1.5">
-                      {/* Squircle backdrop blur & background */}
-                      <div
-                        className="absolute inset-0 rounded-2xl bg-black/[0.06] dark:bg-white/[0.08] backdrop-blur-xs"
-                        style={{
-                          clipPath:
-                            "path('M 0 28 C 0 7.84 7.84 0 28 0 C 48.16 0 56 7.84 56 28 C 56 48.16 48.16 56 28 56 C 7.84 56 0 48.16 0 28 Z')",
-                          WebkitClipPath:
-                            "path('M 0 28 C 0 7.84 7.84 0 28 0 C 48.16 0 56 7.84 56 28 C 56 48.16 48.16 56 28 56 C 7.84 56 0 48.16 0 28 Z')",
-                        }}
-                      />
-                      {/* Squircle border outline */}
-                      <svg
-                        className="absolute inset-0 w-full h-full pointer-events-none drop-shadow-xs"
-                        viewBox="0 0 56 56"
-                      >
-                        <path
-                          d="M 0.5 28 C 0.5 8.2 8.2 0.5 28 0.5 C 47.8 0.5 55.5 8.2 55.5 28 C 55.5 47.8 47.8 55.5 28 55.5 C 8.2 55.5 0.5 47.8 0.5 28 Z"
-                          fill="none"
-                          className="stroke-black/5 dark:stroke-white/10"
-                          strokeWidth="1"
-                        />
-                      </svg>
-                      <ImageOutlined className="!text-[32px] opacity-85 relative z-10" />
+                    {/* Rounded corner square icon */}
+                    <div className="relative w-14 h-14 flex items-center justify-center mb-1.5 rounded-2xl bg-black/[0.06] dark:bg-white/[0.08] backdrop-blur-xs border border-black/5 dark:border-white/10 shadow-xs">
+                      <ImageOutlined className="!text-[32px] opacity-85" />
                     </div>
                     <span className="text-[10px] font-semibold tracking-wider uppercase opacity-75">
                       No image
